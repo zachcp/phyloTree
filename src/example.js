@@ -14,8 +14,6 @@ const colors = [
 var dummy=0;
 var myTree;
 var treeplot = d3.select("#treeplot");
-var myTree2;
-var treeplot2 = d3.select("#treeplot2");
 
 const zoomClade = function(d){
     zoomIntoClade(myTree, d, 800);
@@ -25,44 +23,6 @@ const zoom = function(){
     zoomIn(myTree, 1.4,  700);
 }
 
-// d3.json("/data/zika_tree.json", function(err, data){
-//     console.log(data, err);
-//     if (data){
-//         myTree = phyloTree(data, {layout:"unrooted", svg:treeplot, margins:{top:10, bottom:10, left:10, right:10},
-//                                   callbacks:{onBranchClick:zoomClade,
-//                                             onBranchHover:function(d){console.log(d.n.strain);},
-//                                             onBranchLeave:function(d){console.log(d.n.strain);},
-//                                             onTipHover:function(d){console.log(d.n.strain);},
-//                                             onTipLeave:function(d){console.log(d.n.strain);}
-//                                             }, scalebar:true
-//
-//                                  }
-//                            );
-//         console.log(myTree);
-//     }else{
-//         console.log("error loading data",err);
-//     }
-//     drawTree(myTree);
-//     const branchText = function(d){
-//         if (d.n.muts){
-//             const tmp = d.n.muts.join(',').slice(0,20);
-//             return tmp;
-//         }else{
-//             return "";
-//         }
-//     }
-//     const branchFontSize = function(d){return d.stats.leafCount>2?3:0;}
-//     const tipText = function(d){
-//         if (d.n.strain && d.terminal){
-//             return d.n.strain;
-//         }else{
-//             return "";
-//         }
-//     }
-//     const tipFontSize = function(d){return 4.0;}
-//     //branchLabels(myTree, branchText, branchFontSize, -5, -5);
-//     tipLabels(myTree, tipText, tipFontSize, 5,5);
-// });
 
 d3.json("/data/testdata.json", function(err, data){
     console.log(data, err);
