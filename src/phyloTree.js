@@ -1,3 +1,4 @@
+import * as d3 from 'd3';
 import treeLayout from "./treeLayout";
 import treeCanvas from "./treeCanvas";
 import {preOrderIteration} from "./treeHelpers";
@@ -11,7 +12,7 @@ import {preOrderIteration} from "./treeHelpers";
  * @param  {object} treeJson hierarchical json where .children are the descending branches
  * @return {object}       object storing treeJson and other information about tree display
  */
-const phyloTree = function(treeJson, params) {
+export const phyloTree = function(treeJson, params) {
     const defaultsParams = {
       layout:"rect",
       distance:"div",
@@ -54,6 +55,7 @@ const phyloTree = function(treeJson, params) {
         if (!node.clade){node.clade = nodeArray.length+1;}
         nodeArray.push(node);
     }
+    //if (!treeJson.attr){
     if (!treeJson.attr){
           //console.log(treeJson);
         treeJson.attr = {}
@@ -93,6 +95,7 @@ const phyloTree = function(treeJson, params) {
     if (!newTree.dimension && newTree.svg){
         newTree.dimensions = {width:parseInt(newTree.svg.attr("width"), 10),
                               height:parseInt(newTree.svg.attr("height"), 10)};
+
     }
     // calculate layout and coordinates using defaults if not otherwise specified
     treeLayout(newTree);
@@ -103,5 +106,3 @@ const phyloTree = function(treeJson, params) {
     return newTree;
 }
 
-
-export default phyloTree;

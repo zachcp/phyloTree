@@ -1,3 +1,5 @@
+import * as d3 from 'd3';
+
 export const removeLabels = function(tree){
     tree.svg.selectAll(".tipLabel").remove();
     tree.svg.selectAll(".branchLabel").remove();

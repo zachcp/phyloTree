@@ -1,4 +1,4 @@
-import d3 from "d3";
+import * as d3 from 'd3';
 import {preOrderIteration} from "./treeHelpers";
 import {updateGeometry} from "./updateTree";
 

@@ -1,3 +1,4 @@
+import * as d3 from 'd3';
 
 export const preOrderIteration = function(node, callback){
     callback(node);

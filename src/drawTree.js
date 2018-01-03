@@ -1,8 +1,9 @@
+import * as d3 from 'd3';
 import {drawTips} from "./drawTips";
 import {drawBranches} from "./drawBranches";
 import {addScaleBar} from "./scaleBar";
 
-const drawTree = function(tree, callbacks, features){
+export const drawTree = function(tree, callbacks, features){
     if (callbacks && callbacks.branch){
         drawBranches(tree, callbacks.branch);
     }else{
@@ -18,4 +19,4 @@ const drawTree = function(tree, callbacks, features){
     }
 }
 
-export default drawTree;
+

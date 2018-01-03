@@ -1,5 +1,5 @@
 //function in here go from node.layout -> node.SVGcoords
-import d3 from "d3";
+import * as d3 from 'd3';
 import {visibleRectangleFromNodes, resetView} from "./zoom";
 import {addScaleBar} from "./scaleBar";
 

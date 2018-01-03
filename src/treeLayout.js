@@ -1,5 +1,5 @@
 //function in here go from node.n -> node.layout
-import d3 from "d3";
+import * as d3 from 'd3';
 import {postOrderIteration, preOrderIteration} from "./treeHelpers";
 import {visibleRectangleFromNodes} from "./zoom";
 
