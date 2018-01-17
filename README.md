@@ -8,12 +8,18 @@ tree = {
 	nodes: [node1, node2, ...],			//linear array of nodes
 	tips: [tip1, tip2, ...],			//terminal nodes, subset of all nodes
 	internals: [node1, node2, ...],		//internal nodes, subset of all nodes
-	tipAttributes: { } ,				//object storing styles and attributes of tips
-	branchAttributes: { } ,				//object storing styles and attributes of branches
 	tipElements: { } ,				 	//d3 elements corresponding to the tips
 	branchTbarElements: { } ,			//d3 elements corresponding to the branches
 	branchStemElements: { } ,		 	//d3 elements corresponding to the branches
 }
+
+
+# tip and branch attributes are stored on the nodes
+# this exampel shows the attributes of the first node, tree.nodes[0]
+
+tree.nodes[0].tipAttributes: { }  		//object storing styles and attributes of tips
+tree.nodes[0].branchAttributes: { }    //object storing styles and attributes of branches
+
 ```
 Upon instantiation, phyloTree generates this data structure and wraps the input tree into a custom node structure where the original node is stored as `.n`.
 
